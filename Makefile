@@ -5,8 +5,9 @@ include config.mk
 
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
+PATCHES = $(wildcard patches/*.diff)
 
-all: options dwm
+all: patches options dwm
 
 options:
 	@echo dwm build options:
@@ -27,6 +28,12 @@ dwm: ${OBJ}
 
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
+	patch -R < "${PATCHES}"
+
+patch:
+	@echo Applying following patches:
+	@ls patches
+	patch < "${PATCHES}"
 
 dist: clean
 	mkdir -p dwm-${VERSION}
