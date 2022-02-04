@@ -7,7 +7,7 @@ SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 PATCHES = $(wildcard patches/*.diff)
 
-all: patches options dwm
+all: patch options dwm
 
 options:
 	@echo dwm build options:
