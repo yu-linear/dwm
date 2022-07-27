@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=dwm
+Comment=suckless dwm
+Exec=dwm_suite.sh
+TryExec=dwm
+Type=Application
+DesktopNames=dwm
+X-GDM-SessionRegisters=true
+#X-Ubuntu-Gettext-Domain=gnome-session-3.0
